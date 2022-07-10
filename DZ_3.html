@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">                                                       
+        <title>Моя первая страница</title>                                         
+
+    </head>
+
+    <body>
+        
+<script language="JavaScript">
+    alert ('ИГРА В КАМЕНЬ-НОЖНИЦЫ-БУМАГА');   
+    flag = true;
+    flag1 = true;
+    flag2=true;
+            
+    while (flag2) {
+        while (flag == true) {
+            while (flag1 == true) {
+                player1 = prompt ("введите: ножницы или камень или бумага");
+                player1 = player1.toLowerCase (player1);
+                if (player1 != "ножницы"  && player1 != "камень" && player1 != "бумага") 
+                {
+                    alert ("некорректные данные, повторите ввод");
+
+                }
+                else {
+                    flag1 = false;
+                }
+            }
+        p2 = Math.floor(Math.random() * 2 + 1);
+        p2 == 1 ? player2 = "ножницы" : p2 == 2 ? player2 = "камень" : player2 == "бумага";
+        alert (`Ход бота: ${player2} - ваш ход: ${player1}`);
+        player1 == "ножницы" ? p1 = 1 : player1 == "камень" ? p1 = 2 : p1 = 3;
+        
+        if (p1 == p2 ) {
+            alert ("Ничья, продолжаем игру...");
+            flag1 = true;
+        }
+        else if ((p1 == 1 && p2 == 2) || (p1 == 2 && p2 == 3) || (p1 == 3 && p2 == 1)) {
+            alert ("Победил БОТ!");
+            flag = false; 
+        }
+        else {
+            alert ("ВЫ победили!");
+            flag = false;
+        }   
+
+        }
+        flag2 = confirm("Будете еще играть в игру?");
+        if (flag2 == true ){
+            flag1 = true;
+            flag = true;}
+    }
+        </script>
+
+
+
+</body>
